@@ -1,0 +1,179 @@
+
+**** 01/29/19 20:04:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\circuit project\Schematic1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jan 29 19:33:16 2019
+
+
+
+** Analysis setup **
+.tran 0 1000
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic1.net"
+
+**** INCLUDING Schematic1.net ****
+* Schematics Netlist *
+
+
+
+L_L1         $N_0001 $N_0002  1  
+R_R2         $N_0003 $N_0002  4  
+R_R1         $N_0004 $N_0002  1  
+L_L2         0 $N_0003  4  
+C_C1         0 $N_0001  1  
+V_V1         $N_0004 0 64
+X_U1         $N_0002 0 Sw_tClose PARAMS: tClose=0.3 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+
+**** RESUMING Schematic1.cir ****
+.INC "Schematic1.als"
+
+
+
+**** INCLUDING Schematic1.als ****
+* Schematics Aliases *
+
+.ALIASES
+L_L1            L1(1=$N_0001 2=$N_0002 )
+R_R2            R2(1=$N_0003 2=$N_0002 )
+R_R1            R1(1=$N_0004 2=$N_0002 )
+L_L2            L2(1=0 2=$N_0003 )
+C_C1            C1(1=0 2=$N_0001 )
+V_V1            V1(+=$N_0004 -=0 )
+X_U1            U1(1=$N_0002 2=0 )
+.ENDALIASES
+
+
+**** RESUMING Schematic1.cir ****
+.probe
+
+
+.END
+
+**** 01/29/19 20:04:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\circuit project\Schematic1.sch
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.Smod       
+         RON     .01         
+        ROFF    1.000000E+06 
+         VON    1            
+        VOFF    0            
+
+
+**** 01/29/19 20:04:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\circuit project\Schematic1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(X_U1.3)    0.0000 ($N_0001)   51.2000                   ($N_0002)   51.2000    
+
+($N_0003)    0.0000                   ($N_0004)   64.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.280E+01
+    X_U1.V1      0.000E+00
+
+    TOTAL POWER DISSIPATION   8.19E+02  WATTS
+
+
+**** 01/29/19 20:04:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\circuit project\Schematic1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE CONTROLLED SWITCHES
+
+
+NAME         X_U1.S1   
+MODEL        X_U1.Smod 
+I LOAD       5.12E-05 
+V LOAD       5.12E+01 
+R LOAD       1.00E+06 
+V CTRL       0.00E+00 
+**** 01/29/19 20:04:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * D:\circuit project\Schematic1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(X_U1.3)    0.0000 ($N_0001)   51.2000                   ($N_0002)   51.2000    
+
+($N_0003)    0.0000                   ($N_0004)   64.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.280E+01
+    X_U1.V1      0.000E+00
+
+    TOTAL POWER DISSIPATION   8.19E+02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .06
+
